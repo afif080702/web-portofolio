@@ -1,0 +1,606 @@
+/* ==============================================================
+   TUGAS PEMROGRAMAN WEB: CSS
+   Nama  : Aliy Fattah Afifi
+   Aturan: Setiap ID dan Class CSS menggunakan prefiks nama mahasiswa (aliy_)
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Reset & Pengaturan Dasar --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Sembunyikan scrollbar untuk Firefox */
+  -ms-overflow-style: none; /* Sembunyikan scrollbar untuk IE dan Edge */
+}
+
+/* Sembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 78px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE dan Edge */
+}
+
+/* --- Container Umum --- */
+.aliy_container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* --- Navigasi / Header (#aliy_header & .aliy_navbar) --- */
+#aliy_header {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#aliy_header.aliy_header_hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+.aliy_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 78px;
+  padding: 22px 0;
+}
+
+.aliy_logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.aliy_logo_badge {
+  color: #1d4ed8;
+  font-weight: 800;
+  font-size: 1.65rem;
+  letter-spacing: -3px;
+  margin-right: 3px;
+}
+
+/* Aliy hitam, Portofolio biru se-biru Fattah Afifi */
+.aliy_logo_name {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.aliy_logo_highlight {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.aliy_nav_menu {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.aliy_nav_item a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.aliy_nav_item a:hover,
+.aliy_nav_item.aliy_active a {
+  color: #1d4ed8;
+}
+
+/* --- Hero Section (#aliy_hero) --- */
+#aliy_hero {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #eff6ff 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 80px 0;
+}
+
+.aliy_hero_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.aliy_hero_text {
+  flex: 1.1;
+  max-width: 580px;
+}
+
+.aliy_hero_greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.aliy_hero_name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.aliy_hero_name_highlight {
+  color: #1d4ed8;
+}
+
+.aliy_hero_role {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.aliy_hero_desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.aliy_hero_buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.aliy_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.aliy_btn_primary {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 4px 10px rgba(29, 78, 216, 0.25);
+}
+
+.aliy_btn_primary:hover {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+.aliy_btn_secondary {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.aliy_btn_secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+}
+
+.aliy_hero_illustration {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aliy_hero_svg {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  filter: drop-shadow(0 15px 25px rgba(37, 99, 235, 0.12));
+}
+
+/* --- Section Heading --- */
+.aliy_section_heading {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+/* Underline biru pada About Me & My Projects */
+.aliy_section_heading_underline {
+  position: relative;
+  display: inline-block;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.aliy_section_heading_underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 42px;
+  height: 3.5px;
+  background-color: #1d4ed8;
+  border-radius: 2px;
+}
+
+/* --- About Me Section (#aliy_about) --- */
+#aliy_about {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.aliy_about_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.aliy_about_content {
+  flex: 1.3;
+}
+
+.aliy_about_desc {
+  font-size: 0.96rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.aliy_about_meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.aliy_meta_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.aliy_meta_item svg {
+  color: #1d4ed8;
+  flex-shrink: 0;
+}
+
+.aliy_about_photo_container {
+  flex: 0.7;
+  display: flex;
+  justify-content: center;
+}
+
+.aliy_photo_frame {
+  width: 210px;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.aliy_photo_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* --- Skills Section (#aliy_skills) --- */
+#aliy_skills {
+  padding: 60px 0;
+  background-color: #f8fafc;
+}
+
+.aliy_skills_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.aliy_skill_card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.aliy_skill_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.aliy_skill_icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aliy_skill_icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.aliy_skill_name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* --- Projects Section (#aliy_projects) --- */
+#aliy_projects {
+  padding: 60px 0 80px 0;
+  background-color: #ffffff;
+}
+
+.aliy_projects_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.aliy_project_card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.aliy_project_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.aliy_project_banner {
+  height: 130px;
+  background-color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.aliy_project_banner svg,
+.aliy_project_banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.aliy_project_body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.aliy_project_title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.aliy_project_desc {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.aliy_project_link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.aliy_project_link:hover {
+  color: #1e40af;
+  gap: 8px;
+}
+
+/* --- Footer (#aliy_footer) --- */
+#aliy_footer {
+  background-color: #0b1528;
+  color: #ffffff;
+  padding: 30px 0 16px 0;
+}
+
+.aliy_footer_top {
+  display: flex;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #1e293b;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.aliy_footer_brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.aliy_footer_title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* Aliy putih, Portofolio biru muda */
+.aliy_footer_title_white {
+  color: #ffffff;
+}
+
+.aliy_footer_title_blue {
+  color: #38bdf8;
+}
+
+.aliy_footer_subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.aliy_footer_divider {
+  width: 1px;
+  height: 38px;
+  background-color: #334155;
+  margin: 0 12px;
+}
+
+.aliy_footer_contacts {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.aliy_footer_contact_item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.aliy_footer_contact_item svg {
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.aliy_footer_bottom {
+  text-align: left;
+  padding-top: 14px;
+}
+
+.aliy_copyright {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* --- Desain Responsif --- */
+@media (max-width: 992px) {
+  .aliy_hero_wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .aliy_hero_text {
+    max-width: 100%;
+  }
+  .aliy_hero_buttons {
+    justify-content: center;
+  }
+  .aliy_skills_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .aliy_projects_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aliy_footer_divider {
+    display: none;
+  }
+  .aliy_footer_contacts {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 96px;
+  }
+  .aliy_navbar {
+    flex-direction: column;
+    gap: 12px;
+    min-height: 96px;
+    padding: 14px 0;
+  }
+  .aliy_nav_menu {
+    gap: 16px;
+  }
+  .aliy_about_wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .aliy_about_meta {
+    justify-content: center;
+  }
+  .aliy_skills_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aliy_projects_grid {
+    grid-template-columns: 1fr;
+  }
+  .aliy_footer_top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .aliy_footer_contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
